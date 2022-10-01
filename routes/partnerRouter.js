@@ -28,7 +28,7 @@ partnerRouter.route('/:partnerId')
     next();
 })
 .get((req, res) => {
-    res.end('Will send all the partners to you');
+    res.end(`Will send #${req.params.partnerId} to you`);
 })
 .post((req, res) => {
     res.end(`Will add the partner: ${req.body.name} with description: ${req.body.description}`);
@@ -38,7 +38,7 @@ partnerRouter.route('/:partnerId')
     res.end('PUT operation not supported on /partners');
 })
 .delete((req, res) => {
-    res.end('Deleting all partners');
+    res.end(`Deleting #${req.params.partnerId}`);
 });
 
 module.exports = partnerRouter;

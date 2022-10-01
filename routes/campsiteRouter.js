@@ -28,7 +28,7 @@ campsiteRouter.route('/:campsiteId')
     next();
 })
 .get((req, res) => {
-    res.end('Will send all the campsites to you');
+    res.end(`Will send #${req.params.campsiteId} campsites to you`);
 })
 .post((req, res) => {
     res.end(`Will add the campsite: ${req.body.name} with description: ${req.body.description}`);
@@ -38,7 +38,7 @@ campsiteRouter.route('/:campsiteId')
     res.end('PUT operation not supported on /campsites');
 })
 .delete((req, res) => {
-    res.end('Deleting all campsites');
+    res.end(`Deleting #${req.params.campsiteId}`);
 });
 
 module.exports = campsiteRouter;

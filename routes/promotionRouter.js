@@ -28,7 +28,7 @@ promotionRouter.route('/:promotionId')
     next();
 })
 .get((req, res) => {
-    res.end('Will send all the promotions to you');
+    res.end(`Will send #${req.params.promotionId} to you`);
 })
 .post((req, res) => {
     res.end(`Will add the promotion: ${req.body.name} with description: ${req.body.description}`);
@@ -38,7 +38,7 @@ promotionRouter.route('/:promotionId')
     res.end('PUT operation not supported on /promotions');
 })
 .delete((req, res) => {
-    res.end('Deleting all promotions');
+    res.end(`Deleting #${req.params.promotionId}`);
 });
 
 module.exports = promotionRouter;
